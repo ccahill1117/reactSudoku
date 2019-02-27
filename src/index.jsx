@@ -8,8 +8,8 @@ import './index.css';
 
 const store = createStore(rootReducer);
 
-const unsubscribe = store.subscribe(() => {
-  console.log('subscribe', store.getState(), unsubscribe);
+store.subscribe(() => {
+  console.log('subscribe', store.getState());
 });
 
 ReactDOM.render(

@@ -1,0 +1,21 @@
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #404040;
+}
+
+.value {
+  display: block;
+  border-bottom: none;
+  font-size: 0.7em;
+}
+
+.cell input {
+  display: block;
+  width: 1em;
+  background-color: #f0f0f0;
+  border: none;
+  font: inherit;
+  font-size: 2em;
+}

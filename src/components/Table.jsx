@@ -1,16 +1,17 @@
 import React from 'react';
-import Cell from './Cell';
 import PropTypes from 'prop-types';
+import Cell from './Cell';
+import styles from './Table.css';
 
 
 function Table(props){
-
   return(
-    <div>
-      {(props.cellArray).map((cell, index) =>
-        <Cell value={cell.value}
+    <div className={styles.table}>
+      {(props.cellArray).map((value, index) =>
+        <Cell 
           key={index}
-        />
+          index={index}
+          value={value} />
       )}
     </div>
   );

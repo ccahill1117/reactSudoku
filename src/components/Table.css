@@ -1,0 +1,26 @@
+.table {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  width: 500px;
+  height: 500px;
+  background-color: #ffffff;
+}
+
+.table div {
+  border: 1px solid #808080;
+}
+
+.table div:nth-child(3n) {
+  border-right: 3px solid #000000;
+  z-index: 1;
+}
+
+.table div:nth-child(-9n+81) {
+  border-right: 2px solid #808080;
+}
+
+.table div:nth-child(n+19):nth-child(-n+27),div:nth-child(n+46):nth-child(-n+54) 
+{
+  border-bottom: 3px solid #000000;
+  z-index: 1;
+}
