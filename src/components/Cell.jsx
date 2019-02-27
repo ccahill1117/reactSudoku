@@ -22,18 +22,18 @@ class Cell extends React.Component {
       console.log(`submit [${this.props.index}] = _`);
       this.props.dispatch({
         type: 'SET_CELL',
-        hello: this.props.index,
+        index: this.props.index,
         value: 0,
-        garbage: 'bad-value'
+        message: 'bad-value'
       });
       this.setState({ value: ''});
     } else {
       console.log(`submit [${this.props.index}] = ${this.state.value}`);
       this.props.dispatch({
         type: 'SET_CELL',
-        hello: this.props.index,
+        index: this.props.index,
         value: value,
-        garbage: 'good-value'
+        message: 'good-value'
       });
     }
   }
@@ -47,16 +47,14 @@ class Cell extends React.Component {
             type='text'
             maxLength='1'
             value={this.state.value}
-            onChange={this.handleChange} />
+            onChange={this.handleChange}
+            onBlur={this.handleSubmit} />
         </form>
       </div>
     );
   }
 }
 
-/*
-        <div className={styles.value}>{this.props.index}={(this.props.value == 0) ? '' : this.props.value}</div>
-        */
 Cell.propTypes = {
   index: PropTypes.number,
   value: PropTypes.number,

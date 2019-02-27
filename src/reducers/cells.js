@@ -1,13 +1,13 @@
 const defaultCells = Array.from({length: 81}, () => 0);
 
-export default (cells = defaultCells, action) => {
-  console.log('reducer=', action.garbage);
-  switch (action.type) {
+export default (cells = defaultCells, {type, index, value, message}) => {
+  console.log('reducer=', message);
+  switch (type) {
   case 'SET_CELL':
     return [
-      ...cells.slice(0, action.hello),
-      action.value,
-      ...cells.slice(action.hello + 1)
+      ...cells.slice(0, index),
+      value,
+      ...cells.slice(index + 1)
     ];
   default:
     return cells;
