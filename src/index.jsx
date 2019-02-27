@@ -8,10 +8,6 @@ import './index.css';
 
 const store = createStore(rootReducer);
 
-store.subscribe(() => {
-  console.log('subscribe', store.getState());
-});
-
 ReactDOM.render(
   <Provider store={store}>
     <App/>

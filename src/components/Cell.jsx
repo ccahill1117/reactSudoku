@@ -20,18 +20,20 @@ class Cell extends React.Component {
     const value = parseInt(this.state.value);
     if(isNaN(value) || (value == 0)) {
       console.log(`submit [${this.props.index}] = _`);
-      this.props.dispatch({ 
+      this.props.dispatch({
         type: 'SET_CELL',
-        index: this.props.index,
-        value: 0
+        hello: this.props.index,
+        value: 0,
+        garbage: 'bad-value'
       });
       this.setState({ value: ''});
     } else {
       console.log(`submit [${this.props.index}] = ${this.state.value}`);
-      this.props.dispatch({ 
+      this.props.dispatch({
         type: 'SET_CELL',
-        index: this.props.index,
-        value: value
+        hello: this.props.index,
+        value: value,
+        garbage: 'good-value'
       });
     }
   }
@@ -41,8 +43,8 @@ class Cell extends React.Component {
       <div className={styles.cell}>
         <div className={styles.value}>{this.props.index}={this.props.value}</div>
         <form onSubmit={this.handleSubmit}>
-          <input 
-            type='text' 
+          <input
+            type='text'
             maxLength='1'
             value={this.state.value}
             onChange={this.handleChange} />
