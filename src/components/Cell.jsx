@@ -53,6 +53,13 @@ class Cell extends React.Component {
       </div>
     );
   }
+
+  // componentDidUpdate() {
+  //   if(this.props.value != this.state.value) {
+  //     this.setState({ value: ''});
+  //   }
+  //   console.log('did update');
+  // }
 }
 
 Cell.propTypes = {
